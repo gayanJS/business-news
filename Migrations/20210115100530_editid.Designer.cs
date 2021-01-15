@@ -4,14 +4,16 @@ using BusinessNews.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BusinessNewsReact.Migrations
 {
     [DbContext(typeof(BusinessDBContext))]
-    partial class BusinessDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210115100530_editid")]
+    partial class editid
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,12 +28,12 @@ namespace BusinessNewsReact.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("UserForeignKey")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserForeignKey")
+                    b.HasIndex("UserId")
                         .IsUnique();
 
                     b.ToTable("Authors");
@@ -70,13 +72,7 @@ namespace BusinessNewsReact.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("UserForeignKey")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UserForeignKey")
-                        .IsUnique();
 
                     b.ToTable("Readers");
                 });
@@ -96,7 +92,13 @@ namespace BusinessNewsReact.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("ReaderId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ReaderId")
+                        .IsUnique();
 
                     b.ToTable("Users");
                 });
@@ -120,7 +122,7 @@ namespace BusinessNewsReact.Migrations
                 {
                     b.HasOne("BusinessNews.Models.User", "User")
                         .WithOne("Author")
-                        .HasForeignKey("BusinessNews.Models.Author", "UserForeignKey")
+                        .HasForeignKey("BusinessNews.Models.Author", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -136,15 +138,15 @@ namespace BusinessNewsReact.Migrations
                     b.Navigation("Author");
                 });
 
-            modelBuilder.Entity("BusinessNews.Models.Reader", b =>
+            modelBuilder.Entity("BusinessNews.Models.User", b =>
                 {
-                    b.HasOne("BusinessNews.Models.User", "User")
-                        .WithOne("Reader")
-                        .HasForeignKey("BusinessNews.Models.Reader", "UserForeignKey")
+                    b.HasOne("BusinessNews.Models.Reader", "Reader")
+                        .WithOne("User")
+                        .HasForeignKey("BusinessNews.Models.User", "ReaderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
+                    b.Navigation("Reader");
                 });
 
             modelBuilder.Entity("NewsReader", b =>
@@ -167,11 +169,14 @@ namespace BusinessNewsReact.Migrations
                     b.Navigation("News");
                 });
 
+            modelBuilder.Entity("BusinessNews.Models.Reader", b =>
+                {
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("BusinessNews.Models.User", b =>
                 {
                     b.Navigation("Author");
-
-                    b.Navigation("Reader");
                 });
 #pragma warning restore 612, 618
         }

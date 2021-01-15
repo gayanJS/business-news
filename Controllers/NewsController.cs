@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BusinessNews.Models;
 using BusinessNews.Services;
+using BusinessNewsReact.Services;
 
 namespace BusinessNewsReact.Controllers
 {
@@ -106,5 +107,7 @@ namespace BusinessNewsReact.Controllers
         {
             return _context.News.Any(e => e.Id == id);
         }
+        ThirdPartyNewsApi newsapi = new ThirdPartyNewsApi();
+       
     }
 }
