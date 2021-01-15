@@ -5,10 +5,10 @@ import './Section.css';
 
 function Section() {
   return (
-    <div className='hero-container'>
+    <div className='container'>
       <h1>LATEST NEWS</h1>
       <p>What are you waiting for?</p>
-      <div className='hero-btns'>
+      <div className='btns'>
         <Button
           className='btns'
           buttonStyle='btn--outline'

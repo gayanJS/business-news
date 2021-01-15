@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Login from "./Style/Login.css";
 import { useSpring, animated } from "react-spring";
 
+
 function App() {
 
    const [registrationFormStatus, setRegistartionFormStatus] = useState(false);
@@ -31,7 +32,6 @@ function App() {
   }
 
   return (
-    
   <div>
     
 
@@ -67,7 +67,6 @@ function App() {
 </div>
 
   </div>
-    
   );
 }
 
@@ -97,7 +96,12 @@ function RegisterForm() {
       <input type="submit" value="submit" class="submit" />
     </React.Fragment>
   );
-}
+
+
+
+  }
+
+
 
 export default App;
 

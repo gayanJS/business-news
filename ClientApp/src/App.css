@@ -17,11 +17,11 @@
 }
 
 .services {
-  background-image: url('12.jpg');
+  background-image: url('33.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #fff;
+  color: rgb(241, 14, 14);
   font-size: 100px;
 }
 
