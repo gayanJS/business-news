@@ -75,7 +75,6 @@ function Footer() {
             >
               <i class='fab fa-youtube' />
             </Link>
-          
             <Link
               class='social-icon-link twitter'
               to='/'

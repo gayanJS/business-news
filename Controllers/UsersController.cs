@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BusinessNews.Models;
@@ -15,6 +15,7 @@ namespace BusinessNewsReact.Controllers
     public class UsersController : ControllerBase
     {
         private readonly BusinessDBContext _context;
+     
 
         public UsersController(BusinessDBContext context)
         {
@@ -106,5 +107,47 @@ namespace BusinessNewsReact.Controllers
         {
             return _context.Users.Any(e => e.Id == id);
         }
+
+
+        [HttpPost]
+        [Route("login")]
+        public async Task<IActionResult> Login(User user)
+        {
+            try
+            {            // CustomerModelDB.Add(newcustomer);
+                var CheckEmailUser = _context.Users.FirstOrDefault(m => m.Email.ToLower() == user.Email.ToLower()); //check email already exit or not
+                var CheckPasswerdUser = _context.Users.FirstOrDefault(m => m.Password == user.Password);
+
+               
+
+
+                if ((CheckEmailUser == null || CheckPasswerdUser == null) )
+                {
+                    return BadRequest(); //New page
+                }
+
+
+
+                else
+                {
+                    
+
+                    // Return token
+                    //var tokenString = _jwtService.GenerateJWTtoken();
+                    return Ok();
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+
     }
 }
+
