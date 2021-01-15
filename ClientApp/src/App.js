@@ -4,10 +4,9 @@ import './App.css';
 import Home from './components/pages/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Login from './components/Login';
+import Footer from './components/Footer';
 
-
-
-import SignUp from './components/pages/SignUp';
+import Cards from './components/Cards';
 
 function App() {
   return (
@@ -20,7 +19,11 @@ function App() {
           
           <Route path='/sign-up' component={Login} />
         </Switch>
+        
+        <Cards />
+        <Footer />
       </Router>
+    
     </>
   );
 }
