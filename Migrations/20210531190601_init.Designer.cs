@@ -4,14 +4,16 @@ using BusinessNewsReact.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BusinessNewsReact.Migrations
 {
     [DbContext(typeof(BusinessDBContext))]
-    partial class BusinessDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210531190601_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -166,15 +168,15 @@ namespace BusinessNewsReact.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8d1a9d9f-bd2e-4488-995e-5aca05a6bd1a",
-                            ConcurrencyStamp = "474a0665-d593-469f-ad29-fd306c3198b6",
+                            Id = "0871f565-5be9-4693-939b-55f95fac6a6a",
+                            ConcurrencyStamp = "f2574090-65da-411c-8c45-2386e1e9f807",
                             Name = "Visitor",
                             NormalizedName = "VISITOR"
                         },
                         new
                         {
-                            Id = "e6b903ca-bf6a-4b24-bf3e-20323bac47c5",
-                            ConcurrencyStamp = "6974a2d3-2e0e-4dde-93fc-ea249ad06bb5",
+                            Id = "e60eda5b-92ca-4fe9-bfc4-2ae3e1fcd052",
+                            ConcurrencyStamp = "0482acc4-d643-4070-9787-f218c34771ac",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });

@@ -1,4 +1,6 @@
-﻿using AutoMapper;
+﻿
+
+using AutoMapper;
 using BusinessNewsReact.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -13,22 +15,21 @@ using System.Threading.Tasks;
 
 namespace BusinessNewsReact.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api /[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class AccountsController : ControllerBase
     {
-
         private readonly IMapper _mapper;
         private readonly UserManager<User> _userManager;
         private readonly IConfigurationSection _jwtSettings;
-        public UsersController(IMapper mapper, UserManager<User> userManager, IConfiguration configuration)
+        public AccountsController(IMapper mapper, UserManager<User> userManager, IConfiguration configuration)
         {
             _mapper = mapper;
             _userManager = userManager;
             _jwtSettings = configuration.GetSection("JwtSettings");
         }
         [HttpPost("register")]
-
+        
         public async Task<ActionResult> RegisterUser(UserRegistrationModel userModel)
         {
             var user = _mapper.Map<User>(userModel);
@@ -41,7 +42,7 @@ namespace BusinessNewsReact.Controllers
             return StatusCode(201);
         }
         [HttpPost("login")]
-
+        
         public async Task<IActionResult> LoginUser(UserLoginModel userModel)
         {
             var user = await _userManager.FindByEmailAsync(userModel.Email);
@@ -84,7 +85,5 @@ new Claim(ClaimTypes.Name, user.Email)
             }
             return claims;
         }
-
     }
 }
-

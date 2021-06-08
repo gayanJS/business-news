@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using BusinessNews.Models;
-using BusinessNews.Services;
+using BusinessNewsReact.Models;
+using BusinessNewsReact.Services;
 
 namespace BusinessNewsReact.Controllers
 {
@@ -101,7 +101,7 @@ namespace BusinessNewsReact.Controllers
 
             return author;
         }
-
+        
         private bool AuthorExists(int id)
         {
             return _context.Authors.Any(e => e.Id == id);

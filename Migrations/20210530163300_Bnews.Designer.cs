@@ -4,14 +4,16 @@ using BusinessNewsReact.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BusinessNewsReact.Migrations
 {
     [DbContext(typeof(BusinessDBContext))]
-    partial class BusinessDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210530163300_Bnews")]
+    partial class Bnews
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -107,14 +109,17 @@ namespace BusinessNewsReact.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasColumnType("nvarchar(max)");
@@ -166,15 +171,15 @@ namespace BusinessNewsReact.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8d1a9d9f-bd2e-4488-995e-5aca05a6bd1a",
-                            ConcurrencyStamp = "474a0665-d593-469f-ad29-fd306c3198b6",
+                            Id = "03b6a554-e45f-4fa8-9e9c-309cd109046a",
+                            ConcurrencyStamp = "65669aa2-8196-443b-8dde-5b955248cd9a",
                             Name = "Visitor",
                             NormalizedName = "VISITOR"
                         },
                         new
                         {
-                            Id = "e6b903ca-bf6a-4b24-bf3e-20323bac47c5",
-                            ConcurrencyStamp = "6974a2d3-2e0e-4dde-93fc-ea249ad06bb5",
+                            Id = "a51d12d5-789f-4244-9254-1879d606d05b",
+                            ConcurrencyStamp = "d917b0aa-d5ef-4950-99a1-40e8eeb62a68",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
