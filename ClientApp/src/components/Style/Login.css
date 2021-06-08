@@ -9,10 +9,10 @@
  }
 
  body {
-    background-image: url("AA.jpg");
+    background-image: url("AAA.jpeg");
     background-size:  cover;
     background-position:center center;
-    
+    background-attachment:fixed;
   }
   .container {
       width: 100%;
@@ -23,7 +23,7 @@
 
   .login-register-wrapper {
         margin-top: 50px;
-      height: 560px;
+      height: 650px;
       width: 500px;
       margin-left: auto;
       margin-right: auto;
@@ -158,6 +158,6 @@
         border: 1px solid #f8f9fa;
         padding: .375rem .75rem;
         font-size: 1rem;
-        border-radius: .25rem;
+        border-radius: .30rem;
         transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     }

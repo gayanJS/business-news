@@ -6,7 +6,8 @@
 }
 
 .home,
-.services,
+
+.Services,
 
 .sign-up {
   display: flex;
@@ -21,9 +22,10 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: rgb(241, 14, 14);
+  color: rgb(255, 11, 11);
   font-size: 100px;
 }
+
 
 
 
