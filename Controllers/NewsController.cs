@@ -9,11 +9,9 @@ using BusinessNewsReact.Models;
 using BusinessNewsReact.Services;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace BusinessNewsReact.Controllers
-{  [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+{
     [Route("api/[controller]")]
     [ApiController]
     public class NewsController : ControllerBase
