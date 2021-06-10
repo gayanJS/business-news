@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< Updated upstream
 import './Button.css';
 import { Link } from 'react-router-dom';
 const STYLES = ['btn--primary', 'btn--outline', 'btn--test'];
@@ -29,3 +30,16 @@ export const Button = ({
     </Link>
   );
 };
+=======
+import { Link } from 'react-router-dom';
+
+export function Button() {
+  return (
+    <Link to='sign-up'>
+      <button className='btn'>Sign Up</button>
+    </Link>
+    
+    
+  );
+}
+>>>>>>> Stashed changes

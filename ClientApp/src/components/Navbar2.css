@@ -1,9 +1,5 @@
-.navbar {
-<<<<<<< Updated upstream
-    background: linear-gradient(90deg, rgb(7, 120, 240) 0%, rgb(93, 84, 219) 100%);
-=======
+.navbar2 {
     background: linear-gradient(90deg, rgb(40, 136, 238) 0%, rgb(93, 84, 219) 100%);
->>>>>>> Stashed changes
     height: 80px;
     display: flex;
     justify-content: center;
@@ -14,7 +10,7 @@
     z-index: 999;
   }
   
-  .navbar-container {
+  .navbar2-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,16 +18,10 @@
     max-width: 1500px;
   }
   
-  .navbar-logo {
-<<<<<<< Updated upstream
-    color: #fff;
-    justify-self: start;
-    margin-left: 20px;
-=======
+  .navbar2-logo {
     color: rgb(255, 255, 255);
     justify-self: start;
     margin-left: 1px;
->>>>>>> Stashed changes
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
@@ -44,7 +34,7 @@
     font-size: 1.8rem;
   }
   
-  .nav-menu {
+  .nav2-menu {
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-gap: 10px;
@@ -55,11 +45,11 @@
     margin-right: 2rem;
   }
   
-  .nav-item {
+  .nav2-item {
     height: 80px;
   }
   
-  .nav-links {
+  .nav2-links {
     color: #fff;
     display: flex;
     align-items: center;
@@ -68,7 +58,7 @@
     height: 100%;
   }
   
-  .nav-links:hover {
+  .nav2-links:hover {
     border-bottom: 4px solid #fff;
     transition: all 0.2s ease-out;
   }
@@ -77,7 +67,7 @@
     color: #fff;
   }
   
-  .nav-links-mobile {
+  .nav2-links-mobile {
     display: none;
   }
   
@@ -86,11 +76,11 @@
   }
   
   @media screen and (max-width: 960px) {
-    .NavbarItems {
+    .Navbar2Items {
       position: relative;
     }
   
-    .nav-menu {
+    .nav2-menu {
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -102,40 +92,32 @@
       transition: all 0.5s ease;
     }
   
-    .nav-menu.active {
-<<<<<<< Updated upstream
-      background: #242222;
-=======
+    .nav2-menu.active {
       background: #095af0;
->>>>>>> Stashed changes
       left: 0;
       opacity: 1;
       transition: all 0.5s ease;
       z-index: 1;
     }
   
-    .nav-links {
+    .nav2-links {
       text-align: center;
       padding: 2rem;
       width: 100%;
       display: table;
     }
   
-    .nav-links:hover {
+    .nav2-links:hover {
       background-color: #fff;
       color: #242424;
       border-radius: 0;
     }
   
-    .navbar-logo {
+    .navbar2-logo {
       position: absolute;
       top: 0;
       left: 0;
-<<<<<<< Updated upstream
-      transform: translate(25%, 50%);
-=======
       transform: translate(10%, 25%);
->>>>>>> Stashed changes
     }
   
     .menu-icon {
@@ -153,7 +135,7 @@
       font-size: 2rem;
     }
   
-    .nav-links-mobile {
+    .nav2-links-mobile {
       display: block;
       text-align: center;
       margin: 2rem auto;
@@ -168,18 +150,9 @@
       transition: all 0.3s ease-out;
     }
   
-    .nav-links-mobile:hover {
+    .nav2-links-mobile:hover {
       background: #fff;
       color: #242424;
       transition: 250ms;
     }
-<<<<<<< Updated upstream
-=======
-
-    .btn-links {
-align-items: center;
-
-    }
-
->>>>>>> Stashed changes
   }
